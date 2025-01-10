@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="topnav">
+        <a href="Index.html">Beranda</a>|
+        <a href="Transaksi.html">Transaksi</a>|
+        <a href="Profile.html">Profile</a>|
+        <a href="Login.html">Login</a>|
+    </div>
+    <div class="transaksi">
+        <div class="transaksi">
+        <h2>Form Transaksi</h2>
+        <fieldset>
+            <form id="transaksiForm" onsubmit="return validateForm()">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required><br><br>
+
+                <label for="jumlah">Jumlah Buku:</label>
+                <input type="number" id="jumlah" name="jumlah" required><br><br>
+
+                <label for="kategori">Kategori Buku:</label>
+                <input type="text" id="kategori" name="kategori" required><br><br>
+
+                <input type="submit" value="Simpan">
+            </form>
+        </fieldset>
+
+        <h2>Detail Transaksi</h2>
+        <table id="tabelTransaksi" border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jumlah Buku</th>
+                    <th>Kategori Buku</th>
+                </tr>
+
+                <tr>
+                    <td>Syalwa</td>
+                    <td>1</td>
+                    <td>It Ends With Us</td>
+                </tr>
+
+                <tr>
+                    <td>Kaifa</td>
+                    <td>1</td>
+                    <td>Oath Of Silence</td>
+                </tr>
+
+                <tr>
+                <td>Aneira</td>
+                <td>1</td>
+                <td>The Herbwitche's Princess</td>
+                </tr>
+
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function validateTransaksiForm() {
+            let nama = document.getElementById('nama').value;
+            let jumlah = document.getElementById('jumlah').value;
+            let kategori = document.getElementById('kategori').value;
+
+            if (!nama || !jumlah || !kategori) {
+                alert("Kotak harus diisi, tidak boleh kosong!");
+                return false;
+            }
+            return true;  
+        }
+    </script>
+</body>
+</html>
